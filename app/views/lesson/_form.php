@@ -1,5 +1,6 @@
 <?php
 
+use dosamigos\tinymce\TinyMce;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -20,7 +21,21 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'course_id')->textInput() ?>
 
-    <?= $form->field($model, 'content')->textarea(['rows' => 6]) ?>
+<!--    <?//= $form->field($model, 'content')->textarea(['rows' => 6]) ?>-->
+
+    <?=  $form->field($model, 'content')->widget(TinyMce::className(), [
+        'options' => ['rows' => 20],
+        'language' => 'ru',
+        'clientOptions' => [
+            'plugins' => [
+                'advlist autolink lists link charmap  print hr preview pagebreak',
+                'searchreplace wordcount textcolor visualblocks visualchars code fullscreen nonbreaking',
+                'save insertdatetime media table contextmenu template paste image'
+            ],
+            'toolbar' => 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image'
+        ]
+    ]); ?>
+
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>

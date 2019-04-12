@@ -8,14 +8,14 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = 'Register';
+$this->title = 'Регистрация пользователя';
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="site-register">
 	<h1><?= Html::encode($this->title) ?></h1>
 
-	<p>Please fill out the following fields to login:</p>
+	<p>Заполните, пожалуйста все поля:</p>
 	
 	<?php $form = ActiveForm::begin([
 		'id'          => 'register-form',
@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 	<div class="form-group">
 		<div class="col-md-6 col-md-offset-3">
-			<?= Html::submitButton('Register', ['class' => 'btn btn-primary']) ?>
+			<?= Html::submitButton('Регистрация', ['class' => 'btn btn-primary']) ?>
 		</div>
 	</div>
 	
@@ -41,7 +41,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 	<div class="row">
 		<div class="col-md-6 col-md-offset-3">
-			<p>Already have an account? <?= Html::a('Login!', ['auth/login']) ?></p>
+			<p>Уже зарегистрирован? <?= Html::a('Войти!', ['auth/login']) ?></p>
 		</div>
 	</div>
 </div>

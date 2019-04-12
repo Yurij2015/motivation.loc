@@ -4,6 +4,7 @@ namespace app\forms;
 
 use app\models\User;
 use yii\base\Model;
+use Yii;
 
 /**
  * RegisterForm is the model behind the register form.
@@ -33,12 +34,12 @@ class RegisterForm extends Model
 	/**
 	 * @return array customized attribute labels
 	 */
-	public function attributeLabels()
-	{
-		return [
-			'passwordRepeat' => 'Repeat Password',
-		];
-	}
+//	public function attributeLabels()
+//	{
+//		return [
+//			'passwordRepeat' => 'Repeat Password',
+//		];
+//	}
 	
 	/**
 	 * Registers a user
@@ -67,4 +68,20 @@ class RegisterForm extends Model
 		
 		return false;
 	}
+
+
+    /**
+     * {@inheritdoc}
+     */
+    public function attributeLabels()
+    {
+        return [
+            'firstName' => Yii::t('app', 'First Name'),
+            'lastName' => Yii::t('app', 'Last Name'),
+            'email' => Yii::t('app', 'Email'),
+            'password' => Yii::t('app', 'Password'),
+            'passwordRepeat' => Yii::t('app', 'Password Repeat'),
+        ];
+    }
+
 }

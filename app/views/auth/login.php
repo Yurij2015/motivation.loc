@@ -8,13 +8,13 @@
 use yii\bootstrap\ActiveForm;
 use yii\helpers\Html;
 
-$this->title = 'Login';
+$this->title = 'Вход в систему';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="site-login">
 	<h1><?= Html::encode($this->title) ?></h1>
 
-	<p>Please fill out the following fields to login:</p>
+	<p>Пожалуйста, заполните все поля:</p>
 	
 	<?php $form = ActiveForm::begin([
 		'id'          => 'login-form',
@@ -35,7 +35,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 	<div class="form-group">
 		<div class="col-lg-offset-1 col-lg-11">
-			<?= Html::submitButton('Login', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
+			<?= Html::submitButton('Войти', ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
 		</div>
 	</div>
 	
@@ -43,13 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
 	
 	<div class="row">
 		<div class="col-md-3 col-md-offset-1">
-			<p>Don't have an account? <?= Html::a('Register!', ['auth/register']) ?></p>
+			<p>Нет аккаунта? <?= Html::a('Регистрация!', ['auth/register']) ?></p>
 		</div>
 	</div>
 
 	<div class="row">
 		<div class="col-md-3 col-md-offset-1">
-			<p>Forgot your password? <?= Html::a('Restore!', ['auth/password-request']) ?></p>
+			<p>Забыли пароль? <?= Html::a('Восстановить!', ['auth/password-request']) ?></p>
 		</div>
 	</div>
 
