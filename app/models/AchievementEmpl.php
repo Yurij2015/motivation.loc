@@ -19,9 +19,7 @@ class AchievementEmpl extends BaseAchievementEmpl
 	    [
             [['user_id', 'achievement_idachievement'], 'required'],
             [['user_id', 'achievement_idachievement'], 'integer'],
-            [['date_add', 'date_up'], 'safe'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['date_add', 'date_up'], 'safe']
         ]);
     }
 	

@@ -64,7 +64,7 @@ if($providerAchievementEmpl->totalCount){
         ['class' => 'yii\grid\SerialColumn'],
             'idachievement_empl',
             [
-                'attribute' => 'user.id',
+                'attribute' => 'user.username',
                 'label' => Yii::t('app', 'User')
             ],
                         'date_add',

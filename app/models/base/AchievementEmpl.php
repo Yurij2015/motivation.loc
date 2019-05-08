@@ -3,7 +3,6 @@
 namespace app\models\base;
 
 use Yii;
-use mootensai\behaviors\UUIDBehavior;
 
 /**
  * This is the base model class for table "achievement_empl".
@@ -42,9 +41,7 @@ class AchievementEmpl extends \yii\db\ActiveRecord
         return [
             [['user_id', 'achievement_idachievement'], 'required'],
             [['user_id', 'achievement_idachievement'], 'integer'],
-            [['date_add', 'date_up'], 'safe'],
-            [['lock'], 'default', 'value' => '0'],
-            [['lock'], 'mootensai\components\OptimisticLockValidator']
+            [['date_add', 'date_up'], 'safe']
         ];
     }
 
@@ -54,17 +51,6 @@ class AchievementEmpl extends \yii\db\ActiveRecord
     public static function tableName()
     {
         return 'achievement_empl';
-    }
-
-    /**
-     *
-     * @return string
-     * overwrite function optimisticLock
-     * return string name of field are used to stored optimistic lock
-     *
-     */
-    public function optimisticLock() {
-        return 'lock';
     }
 
     /**
@@ -97,20 +83,6 @@ class AchievementEmpl extends \yii\db\ActiveRecord
         return $this->hasOne(\app\models\User::className(), ['id' => 'user_id']);
     }
     
-    /**
-     * @inheritdoc
-     * @return array mixed
-     */
-    public function behaviors()
-    {
-        return [
-            'uuid' => [
-                'class' => UUIDBehavior::className(),
-                'column' => 'id',
-            ],
-        ];
-    }
-
 
     /**
      * @inheritdoc
