@@ -2,7 +2,7 @@
 
 use yii\db\Schema;
 
-class m190412_040101_create_category_table extends \yii\db\Migration
+class m190418_150101_create_question_table extends \yii\db\Migration
 {
     public function up()
     {
@@ -11,15 +11,16 @@ class m190412_040101_create_category_table extends \yii\db\Migration
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_general_ci ENGINE=InnoDB';
         }
         
-        $this->createTable('category', [
-            'id' => $this->primaryKey(),
-            'categoryname' => $this->string(45),
+        $this->createTable('question', [
+            'idquestion' => $this->primaryKey(),
+            'question' => $this->string(255),
+            'date_add' => $this->datetime(),
             ], $tableOptions);
                 
     }
 
     public function down()
     {
-        $this->dropTable('category');
+        $this->dropTable('question');
     }
 }

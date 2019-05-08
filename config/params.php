@@ -8,6 +8,6 @@ return [
 		'systemName'  => 'Support',
 		'passwordResetToken' => 3600,
 		'rememberMeExpiration' => 3600 * 24 * 30, // 30 days
-        'title' => 'Educational Portal',
+        'title' => 'MotivationSystem',
 	]
 ];
